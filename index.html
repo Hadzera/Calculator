@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+     * {
+       box-sizing: border-box;
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       
+     }
+
+     body{
+       background-color: teal;
+     }
+
+     .main {
+       width: 400px;
+       margin: auto;
+
+     }
+     .calc-body {
+       width: 275px;
+       margin: auto;
+       min-height: 400px;
+       border: solid 1px #cccccc;
+       box-shadow: 0 8px 50px -7px black;
+     }
+     .calc-screen {
+       background: cadetblue;
+       width: 100%;
+       height: 150px;
+       padding: 20px;
+     }
+     
+     .calc-operation {
+       text-align: right;
+       color: palevioletred;
+       font-size: 21px;
+       padding-bottom: 10px;
+       border-bottom: dotted 1px;
+     }
+     .calc-typed {
+       margin-top: 20px;
+       font-size: 45px;
+       text-align: right;
+       color: cornsilk;
+     }
+
+     .calc-buttom-row {
+       width: 100%;
+       background-color: teal;
+     }
+
+     .buttom {
+       width: 25%;
+       background: cadetblue;
+       color:  cornsilk;
+       padding: 20px;
+       display: inline-block;
+       font-size: 25px;
+       text-align: center;
+       vertical-align: middle;
+       margin-right: -4px;
+       border-right: solid 2px;
+       border-bottom: solid 2px;
+       transition: all 0.2 s ease-in-out;
+
+     }
+
+     .buttom.J {
+      color: cornsilk;
+      background: rosybrown;
+
+     }
+
+     .buttom.c {
+       color: salmon;
+       background-color: slategray;
+     }
+     .buttom:hover {
+       background: palevioletred;
+     }
+     .buttom.c:hover,
+     .buttom.J:hover {
+       background: purple;
+     }
+
+     .blink-me {
+       color: red;
+     }
+      
+    </style>
+</head>
+<body>
+  
+ <div class="main">
+   <div class="calc-body">
+     <div class="calc-screen">
+       <div id="console" class="calc-operation"></div>
+       <div id="res"  class="calc-typed">0</div>
+     </div>
+       <div class="calc-buttom-row">
+         <div class="buttom c" onclick="clearCalc()">C</div>
+         <div class="buttom J" >#</div>
+         <div class="buttom J">%</div>
+         <div class="buttom J" onclick="setVal('/')">/</div>
+       </div>
+
+      <div class="calc-buttom-row">
+        <div class="buttom" onclick="setVal('7')">7</div>
+        <div class="buttom" onclick="setVal('8')">8</div>
+        <div class="buttom" onclick="setVal('9')">9</div>
+        <div class="buttom J" onclick="setVal('*')">X</div>
+      </div>
+
+      <div class="calc-buttom-row">
+        <div class="buttom" onclick="setVal('4')">4</div>
+        <div class="buttom" onclick="setVal('5')">5</div>
+        <div class="buttom" onclick="setVal('6')">6</div>
+        <div class="buttom J" onclick="setVal('-')">-</div>
+      </div>
+
+      <div class="calc-buttom-row">
+        <div class="buttom" onclick="setVal('3')">3</div>
+        <div class="buttom" onclick="setVal('2')">2</div>
+        <div class="buttom" onclick="setVal('1')">1</div>
+        <div class="buttom J" onclick="setVal('+')">+</div>
+      </div>
+
+      <div class="calc-buttom-row">
+        <div class="buttom" onclick="setVal('.')">.</div>
+        <div class="buttom" onclick="setVal('0')">0</div>
+        <div class="buttom">&lt;</div>
+        <div class="buttom J" onclick="calculate()">=</div>
+      </div>
+
+    
+   </div>
+ </div>
+
+   <script type="text/javascript" src="scripts.js"></script>
+
+</body>
+
+</html>
